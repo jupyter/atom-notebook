@@ -1,0 +1,22 @@
+{
+  "name": "jupyter-notebook-atom",
+  "main": "./lib/main",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [],
+  "repository": "https://github.com/atom/jupyter-notebook-atom",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "atom-space-pen-views": "^2.0.5",
+    "flux": "^2.0.3",
+    "fs-plus": "^2.8.1",
+    "immutable": "^3.7.4",
+    "lodash": "^3.10.0",
+    "pathwatcher": "^4.4.3",
+    "react": "^0.13.3",
+    "uuid": "^2.0.1"
+  }
+}

@@ -1,0 +1,22 @@
+# See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Toggle jupyter-notebook-atom'
+      'command': 'jupyter-notebook-atom:toggle'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'jupyter-notebook-atom'
+      'submenu': [
+        {
+          'label': 'Toggle'
+          'command': 'jupyter-notebook-atom:toggle'
+        }
+      ]
+    ]
+  }
+]
