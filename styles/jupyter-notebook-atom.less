@@ -5,22 +5,23 @@
 @import "ui-variables";
 
 .notebook-wrapper {
-    // overflow-y: scroll;
     background-color: rgb(238, 238, 238);
     pointer-events: none;
 }
 
+// Everything is inside this, and it doesn't scroll or get pointer events
+// This is so that the toolbar can effectively be position: fixed without
+//      being in danger of overflowing the area (fixed is relative to viewport)
 .notebook-editor {
-
     position: relative;
     height: 100%;
+    overflow: hidden;
 
     .notebook-toolbar {
         pointer-events: all;
         position: absolute;
         width: 100%;
         top: -1px;
-        // top: 0px;
         left: 50%;
         transform: translateX(-50%);
         padding-top: 5px;
@@ -40,17 +41,9 @@
                 margin: 0;
             }
         }
-
-        .add-cell {
-            // display: block;
-            // width: 80%;
-            // max-width: 200px;
-            // margin: 0 auto;
-            // margin-bottom: 20px;
-            // padding: 20px;
-        }
     }
 
+    // a full-pane scrollable container
     .notebook-cells-container {
         pointer-events: all;
         height: 100%;
@@ -59,6 +52,8 @@
         padding: 50px 15px;
     }
 
+    // actually holds all the cells and is super long
+    // scrolls through the .notebook-cells-container
     .redundant-cells-container {
         max-width: 80%;
         margin: 0 auto;
@@ -78,43 +73,45 @@
         &.focused {
             border: 1px solid green;
         }
-    }
 
-    .cell-main {
-        flex-grow: 1;
-    }
+        .cell-main {
+            flex-grow: 1;
+        }
 
-    .execution-count-label {
-        width: 70px;
-        margin-right: 5px;
-        margin-top: 2px;
-        flex-basis: auto;
-        flex-grow: 0;
+        .execution-count-label {
+            width: 70px;
+            margin-right: 5px;
+            margin-top: 2px;
+            flex-basis: auto;
+            flex-grow: 0;
 
-        font-size: @font-size * 1.0;
-        font-weight: 500;
-        text-align: right;
-        font-family: "Source Code Pro", monospace;
-        color: navy;
-    }
+            font-size: @font-size * 1.0;
+            font-weight: 500;
+            text-align: right;
+            font-family: "Source Code Pro", monospace;
+            color: navy;
+        }
 
-    .cell-input {
-        border: 1px solid lighten(gray, 30%);
-        border-radius: 2px;
-        min-height: 3em;
-        background-color: lighten(gray, 43%);
-        padding: 4px
-    }
+        // the editor element
+        .cell-input {
+            border: 1px solid lighten(gray, 30%);
+            border-radius: 2px;
+            min-height: 3em;
+            background-color: lighten(gray, 43%);
+            padding: 4px
+        }
 
-    .cell-display-area {
-        overflow-x: scroll;
+        // the output area in the normal DOM
+        .cell-display-area {
+            overflow-x: scroll;
+        }
 
+        // the output area in shadowDOM
         .cell-output {
             background-color: white;
             font-size: @font-size;
             padding: 10px 0;
         }
     }
-
 
 }

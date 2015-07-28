@@ -1,10 +1,10 @@
 {
-  "name": "jupyter-notebook-atom",
+  "name": "jupyter-notebook",
   "main": "./lib/main",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "Jupyter Notebook, but inside Atom.",
   "keywords": [],
-  "repository": "https://github.com/atom/jupyter-notebook-atom",
+  "repository": "https://github.com/willwhitney/jupyter-notebook-atom",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
