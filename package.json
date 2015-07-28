@@ -15,13 +15,12 @@
     "flux": "^2.0.3",
     "fs-plus": "^2.8.1",
     "immutable": "^3.7.4",
-    "jupyter-display-area": "0.0.5",
-    "jupyter-kernel-launcher": "file:../jupyter-kernel-launcher",
+    "jupyter-kernel-launcher": "0.0.2",
     "lodash": "^3.10.0",
     "pathwatcher": "^4.4.3",
     "react": "^0.13.3",
-    "transformime": "file:../transformime",
-    "transformime-jupyter-transformers": "file:../transformime-jupyter-transformers",
+    "transformime": "^1.0.0",
+    "transformime-jupyter-transformers": "0.0.3",
     "uuid": "^2.0.1"
   }
 }
