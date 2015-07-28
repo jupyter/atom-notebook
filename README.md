@@ -64,6 +64,7 @@ No other views have state.
 ## To do
 
 - make the UI work with other Atom themes (it only looks good the One Light themes now)
+- keyboard shortcuts & Atom commands
 - add more actions (duplicate cell, restart kernel, change cell type, etc)
 - autocomplete
 - files saved by this package are not currently loadable by `ipython notebook`
