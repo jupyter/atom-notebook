@@ -1,7 +1,7 @@
 {
   "name": "jupyter-notebook",
   "main": "./lib/main",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Jupyter Notebook, but inside Atom.",
   "keywords": [],
   "repository": "https://github.com/willwhitney/jupyter-notebook-atom",
