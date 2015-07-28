@@ -16,12 +16,12 @@
     "fs-plus": "^2.8.1",
     "immutable": "^3.7.4",
     "jupyter-display-area": "0.0.5",
-    "jupyter-kernel-launcher": "0.0.1",
+    "jupyter-kernel-launcher": "file:../jupyter-kernel-launcher",
     "lodash": "^3.10.0",
     "pathwatcher": "^4.4.3",
     "react": "^0.13.3",
     "transformime": "file:../transformime",
-    "transformime-jupyter-transformers": "0.0.1",
+    "transformime-jupyter-transformers": "file:../transformime-jupyter-transformers",
     "uuid": "^2.0.1"
   }
 }

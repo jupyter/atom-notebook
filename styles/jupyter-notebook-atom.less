@@ -5,53 +5,119 @@
 @import "ui-variables";
 
 .notebook-wrapper {
-    padding: 50px 0;
-    overflow-y: scroll;
+    // overflow-y: scroll;
     background-color: rgb(238, 238, 238);
+    pointer-events: none;
 }
 
 .notebook-editor {
-    .notebook-cell {
+
+    position: relative;
+    height: 100%;
+
+    .notebook-toolbar {
+        pointer-events: all;
+        position: absolute;
+        width: 100%;
+        top: -1px;
+        // top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+
+        background-color: @tab-bar-background-color;
+        border-top: 1px solid @tab-bar-border-color;
+        border-bottom: 1px solid @tab-bar-border-color;
+        box-shadow: rgba(87, 87, 87, 0.2) 0px 4px 5px 0px;
+        z-index: 100;
+
+        button {
+            display: inline-block;
+
+            &::before {
+                margin: 0;
+            }
+        }
+
+        .add-cell {
+            // display: block;
+            // width: 80%;
+            // max-width: 200px;
+            // margin: 0 auto;
+            // margin-bottom: 20px;
+            // padding: 20px;
+        }
+    }
+
+    .notebook-cells-container {
+        pointer-events: all;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+        padding: 50px 15px;
+    }
+
+    .redundant-cells-container {
         max-width: 80%;
         margin: 0 auto;
-        margin-bottom: 20px;
-        padding: 20px;
-
         background-color: white;
         box-shadow: rgba(87, 87, 87, 0.2) 0px 0px 12px 1px;
     }
 
-    .cell-sidebar {
-        width: 20%;
-        display:inline-block;
+
+    .notebook-cell {
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+
+        border: 1px solid transparent;
+        border-radius: 2px;
+        &.focused {
+            border: 1px solid green;
+        }
     }
 
     .cell-main {
-        width: 80%;
-        display:inline-block;
+        flex-grow: 1;
+        // margin-left: 70px;
+        // width: 100%;
+        // display:inline-block;
     }
 
     .execution-count-label {
-        color: black;
-        vertical-align: top;
+        width: 70px;
+        margin-right: 5px;
+        margin-top: 2px;
+        flex-basis: auto;
+        flex-grow: 0;
+
+        font-size: @font-size * 1.0;
+        font-weight: 500;
+        text-align: right;
+        font-family: "Source Code Pro", monospace;
+        color: navy;
     }
 
     .cell-input {
-        // background-color: rgb(238, 238, 238);
+        border: 1px solid lighten(gray, 30%);
+        border-radius: 2px;
+        min-height: 3em;
+        background-color: lighten(gray, 43%);
+        padding: 4px
     }
 
-    .cell-output {
-        background-color: white;
-        font-size: @font-size;
-        padding: 10px 0;
+    .cell-display-area {
+        overflow-x: scroll;
+
+        .cell-output {
+            background-color: white;
+            font-size: @font-size;
+            padding: 10px 0;
+        }
     }
 
-    .add-cell {
-        display: block;
-        width: 80%;
-        max-width: 200px;
-        margin: 0 auto;
-        // margin-bottom: 20px;
-        // padding: 20px;
-    }
+
 }
