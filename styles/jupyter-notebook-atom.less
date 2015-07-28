@@ -4,5 +4,19 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-.jupyter-notebook-atom {
+.notebook-wrapper {
+    overflow-y: scroll;
+}
+
+.notebook-editor {
+    .notebook-cell {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .cell-output {
+        background-color: white;
+        font-size: @font-size;
+        padding: 10px 0;
+    }
 }

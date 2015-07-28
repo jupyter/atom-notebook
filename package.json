@@ -19,7 +19,7 @@
     "lodash": "^3.10.0",
     "pathwatcher": "^4.4.3",
     "react": "^0.13.3",
-    "transformime": "0.0.4",
+    "transformime": "file:../transformime",
     "transformime-jupyter-transformers": "0.0.1",
     "uuid": "^2.0.1"
   }
