@@ -5,18 +5,53 @@
 @import "ui-variables";
 
 .notebook-wrapper {
+    padding: 50px 0;
     overflow-y: scroll;
+    background-color: rgb(238, 238, 238);
 }
 
 .notebook-editor {
     .notebook-cell {
         max-width: 80%;
         margin: 0 auto;
+        margin-bottom: 20px;
+        padding: 20px;
+
+        background-color: white;
+        box-shadow: rgba(87, 87, 87, 0.2) 0px 0px 12px 1px;
+    }
+
+    .cell-sidebar {
+        width: 20%;
+        display:inline-block;
+    }
+
+    .cell-main {
+        width: 80%;
+        display:inline-block;
+    }
+
+    .execution-count-label {
+        color: black;
+        vertical-align: top;
+    }
+
+    .cell-input {
+        // background-color: rgb(238, 238, 238);
     }
 
     .cell-output {
         background-color: white;
         font-size: @font-size;
         padding: 10px 0;
+    }
+
+    .add-cell {
+        display: block;
+        width: 80%;
+        max-width: 200px;
+        margin: 0 auto;
+        // margin-bottom: 20px;
+        // padding: 20px;
     }
 }
