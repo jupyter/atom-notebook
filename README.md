@@ -7,7 +7,7 @@ A package that works like the Jupyter Notebook, but inside Atom. It's registered
 ## Usage
 
 1. Clone
-2. `npm install`
+2. `apm install`
 3. then install to Atom with `apm link`.
 
 This package will only work if you've started Atom from the command line. Close all your Atom windows, then run `atom <file|dir>` in a terminal.
