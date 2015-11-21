@@ -7,5 +7,9 @@
 
 # For more detailed documentation see
 # https://atom.io/docs/latest/behind-atom-keymaps-in-depth
+
 'atom-workspace':
   'ctrl-alt-o': 'jupyter-notebook-atom:toggle'
+'atom-workspace .notebook-cell atom-text-editor:not([mini]), atom-workspace .notebook-cell atom-text-editor':
+  'shift-enter': 'jupyter-notebook-atom:run'
+  'cmd-enter': 'jupyter-notebook-atom:run'
