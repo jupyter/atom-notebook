@@ -99,13 +99,16 @@
     }
     // the output area in the normal DOM
     .cell-display-area {
-      overflow-x: scroll;
+      margin-top: 10px;
+      padding: 0 10px;
+      max-height: 80vh;
+      overflow-y: scroll;
+      font-size: @input-font-size;
+      background-color: #fff;
     }
     // the output area in shadowDOM
     .cell-output {
-      background-color: white;
-      font-size: @font-size;
-      padding: 10px 0;
+
     }
   }
 }
