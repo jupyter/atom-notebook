@@ -65,6 +65,7 @@
     box-shadow: rgba(87, 87, 87, 0.2) 0 0 12px 1px;
   }
   .notebook-cell {
+    width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     display: flex;
@@ -72,7 +73,8 @@
     // border: 1px solid @base-border-color;
     border-radius: 2px;
     .cell-main {
-      flex-grow: 1;
+      // flex-grow: 1;
+      flex: 1;
     }
     .execution-count-label {
       width: 70px;
@@ -103,6 +105,7 @@
       padding: 0 10px;
       max-height: 80vh;
       overflow-y: scroll;
+      overflow-wrap: break-word;
       font-size: @input-font-size;
       background-color: #fff;
     }
