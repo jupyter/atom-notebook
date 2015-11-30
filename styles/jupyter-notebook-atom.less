@@ -3,115 +3,115 @@
 // See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
 // for a full listing of what's available.
 @import "ui-variables";
+@import "syntax-variables";
 
 .notebook-wrapper {
-    background-color: rgb(238, 238, 238);
-    pointer-events: none;
+  background-color: @app-background-color;
+  pointer-events: none;
 }
-
 // Everything is inside this, and it doesn't scroll or get pointer events
 // This is so that the toolbar can effectively be position: fixed without
 //      being in danger of overflowing the area (fixed is relative to viewport)
 .notebook-editor {
-    position: relative;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  .notebook-toolbar {
+    pointer-events: all;
+    position: absolute;
+    width: 100%;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: @tab-background-color-active;
+    // border-top: 1px solid @tab-border-color;
+    border-bottom: 1px solid @tab-border-color;
+    box-shadow: rgba(87, 87, 87, 0.2) 0 4px 5px 0;
+    z-index: 100;
+    button {
+      display: inline-block;
+      background-color: @button-background-color;
+      // color: @tab-text-color;
+      // border: 1px solid @button-border-color;
+      // &:hover {
+      //   background-color: @button-background-color-hover;
+      // }
+      //
+      // &:active {
+      //   background-color: @button-background-color-selected;
+      // }
+      &::before {
+        margin: 0;
+      }
+    }
+  }
+  // a full-pane scrollable container
+  .notebook-cells-container {
+    pointer-events: all;
     height: 100%;
-    overflow: hidden;
-
-    .notebook-toolbar {
-        pointer-events: all;
-        position: absolute;
-        width: 100%;
-        top: -1px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding-top: 5px;
-        padding-bottom: 5px;
-        text-align: center;
-
-        background-color: @tab-bar-background-color;
-        border-top: 1px solid @tab-bar-border-color;
-        border-bottom: 1px solid @tab-bar-border-color;
-        box-shadow: rgba(87, 87, 87, 0.2) 0px 4px 5px 0px;
-        z-index: 100;
-
-        button {
-            display: inline-block;
-
-            &::before {
-                margin: 0;
-            }
-        }
+    width: 100%;
+    overflow-y: scroll;
+    padding: 50px 15px;
+  }
+  // actually holds all the cells and is super long
+  // scrolls through the .notebook-cells-container
+  .redundant-cells-container {
+    // max-width: 80%;
+    margin: 0 auto;
+    background-color: @tool-panel-background-color;
+    box-shadow: rgba(87, 87, 87, 0.2) 0 0 12px 1px;
+  }
+  .notebook-cell {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    // border: 1px solid @base-border-color;
+    border-radius: 2px;
+    .cell-main {
+      // flex-grow: 1;
+      flex: 1;
     }
-
-    // a full-pane scrollable container
-    .notebook-cells-container {
-        pointer-events: all;
-        height: 100%;
-        width: 100%;
-        overflow-y: scroll;
-        padding: 50px 15px;
+    .execution-count-label {
+      width: 70px;
+      margin-right: 5px;
+      margin-top: 2px;
+      flex-basis: auto;
+      flex-grow: 0;
+      font-size: @font-size;
+      text-align: right;
+      font-family: @font-family;
+      font-weight: 500;
+      color: @syntax-background-color;
     }
-
-    // actually holds all the cells and is super long
-    // scrolls through the .notebook-cells-container
-    .redundant-cells-container {
-        max-width: 80%;
-        margin: 0 auto;
-        background-color: white;
-        box-shadow: rgba(87, 87, 87, 0.2) 0px 0px 12px 1px;
+    // the editor element
+    .cell-input {
+      border: 2px solid @syntax-background-color;
+      border-radius: 2px;
+      min-height: 3em;
+      // background-color: lighten(gray, 43%);
+      padding: 10px;
+      &.is-focused {
+        border: 2px solid @syntax-selection-color;
+      }
     }
-
-
-    .notebook-cell {
-        padding: 10px 20px;
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: row;
-
-        border: 1px solid transparent;
-        border-radius: 2px;
-        &.focused {
-            border: 1px solid green;
-        }
-
-        .cell-main {
-            flex-grow: 1;
-        }
-
-        .execution-count-label {
-            width: 70px;
-            margin-right: 5px;
-            margin-top: 2px;
-            flex-basis: auto;
-            flex-grow: 0;
-
-            font-size: @font-size * 1.0;
-            font-weight: 500;
-            text-align: right;
-            font-family: "Source Code Pro", monospace;
-            color: navy;
-        }
-
-        // the editor element
-        .cell-input {
-            border: 1px solid lighten(gray, 30%);
-            border-radius: 2px;
-            min-height: 3em;
-            background-color: lighten(gray, 43%);
-            padding: 4px
-        }
-
-        // the output area in the normal DOM
-        .cell-display-area {
-            overflow-x: scroll;
-        }
-
-        // the output area in shadowDOM
-        .cell-output {
-            background-color: white;
-            font-size: @font-size;
-            padding: 10px 0;
-        }
+    // the output area in the normal DOM
+    .cell-display-area {
+      margin-top: 10px;
+      padding: 0 10px;
+      max-height: 80vh;
+      overflow-y: scroll;
+      overflow-wrap: break-word;
+      font-size: @input-font-size;
+      background-color: #fff;
     }
+    // the output area in shadowDOM
+    .cell-output {
 
+    }
+  }
 }

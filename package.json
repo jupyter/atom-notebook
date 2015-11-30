@@ -12,15 +12,22 @@
   "dependencies": {
     "atom-space-pen-views": "^2.0.5",
     "event-kit": "^1.2.0",
-    "flux": "^2.0.3",
+    "flux": "^2",
     "fs-plus": "^2.8.1",
-    "immutable": "^3.7.4",
-    "jupyter-kernel-launcher": "0.0.2",
+    "immutable": "^3",
+    "jupyter-js-services": ">=0.2.1",
     "lodash": "^3.10.0",
-    "pathwatcher": "^4.4.3",
-    "react": "^0.13.3",
+    "pathwatcher": ">=4.4.3",
+    "react": ">=0.13.3",
     "transformime": "^1.0.0",
     "transformime-jupyter-transformers": "0.0.3",
-    "uuid": "^2.0.1"
+    "uuid": "^2.0.1",
+    "ws": "^0.8.0",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.5",
+    "eslint": "^1.10.1",
+    "eslint-plugin-react": "^3.10.0"
   }
 }

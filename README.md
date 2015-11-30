@@ -8,7 +8,11 @@ A package that works like the Jupyter Notebook, but inside Atom. It's registered
 
 1. Clone
 2. `apm install`
-3. then install to Atom with `apm link`.
+3. then install to Atom with `apm link`
+4. Install dependencies:
+  * Python 3: `brew install python3` (there are [issues](http://apple.stackexchange.com/questions/209572/how-to-use-pip-after-the-el-capitan-max-os-x-upgrade) with pip2 and OS X 10.11)
+  * Jupyter: `pip3 install jupyter`
+  * Jupyter Kernel Gateway: `pip3 install jupyter_kernel_gateway`
 
 This package will only work if you've started Atom from the command line. Close all your Atom windows, then run `atom <file|dir>` in a terminal.
 
@@ -65,8 +69,8 @@ No other views have state.
 
 ## To do
 
-- make the UI work with other Atom themes (it only looks good the One Light themes now)
-- keyboard shortcuts & Atom commands
+- ~~make the UI work with other Atom themes (it only looks good the One Light themes now)~~
+- ~~keyboard shortcuts & Atom commands~~
 - add more actions (duplicate cell, restart kernel, change cell type, etc)
 - autocomplete
 - files saved by this package are not currently loadable by `ipython notebook`
