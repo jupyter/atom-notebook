@@ -16,7 +16,6 @@
     "fs-plus": "^2.8.1",
     "immutable": "^3",
     "jupyter-js-services": ">=0.2.1",
-    "lodash": "^3.10.0",
     "pathwatcher": ">=4.4.3",
     "react": ">=0.13.3",
     "transformime": "^1.0.0",
