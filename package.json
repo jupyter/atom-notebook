@@ -25,7 +25,7 @@
     "react": "^0.14",
     "react-dom": "^0.14.3",
     "transformime": "^1",
-    "transformime-jupyter-transformers": ">=0.0.3",
+    "transformime-jupyter-transformers": "0.0.4",
     "uuid": "^2",
     "ws": "^0.8",
     "xmlhttprequest": "^1.8"
