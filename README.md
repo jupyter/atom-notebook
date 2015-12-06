@@ -1,6 +1,6 @@
 # jupyter-notebook
 
-A package that works like the Jupyter Notebook, but inside Atom. It's registered as an opener for `.ipynb` files — try opening one!
+A package that works like the [Jupyter Notebook](http://jupyter.org/), but inside Atom. It's registered as an opener for `.ipynb` files — try opening one!
 
 ![Sweet baby integration](http://i.imgur.com/100MtXR.png)
 
@@ -9,7 +9,7 @@ A package that works like the Jupyter Notebook, but inside Atom. It's registered
 1. Install dependencies:
   * Python 3: `brew install python3` (there are [issues](http://apple.stackexchange.com/questions/209572/how-to-use-pip-after-the-el-capitan-max-os-x-upgrade) with pip2 and OS X 10.11)
   * Jupyter and Jupyter Kernel Gateway: `pip3 install jupyter jupyter_kernel_gateway`
-2. `apm install jupyter-notebook`
+2. `apm install jupyter-notebook` or search for *jupyter-notebook* inside of Atom
 
 ## Usage
 
@@ -76,8 +76,8 @@ No other views have state.
 
 ### To do
 
-- add more actions (duplicate cell, restart kernel, change cell type, etc)
 - autocomplete
-- files saved by this package are not currently loadable by `ipython notebook`
+  - `atom.workspace.getActiveTextEditor()` returns `undefined` because `atom.workspace.getActivePaneItem()` returns our custom NotebookEditor class which contains one or more TextEditors, therefore autocomplete, find, and features provided by other packages don't work in cells
+- add more actions (duplicate cell, restart kernel, change cell type, etc)
 - tell React [our rendering is pure](https://facebook.github.io/react/docs/advanced-performance.html)
 - test rendering performance with big notebooks
