@@ -7,8 +7,17 @@ A package that works like the [Jupyter Notebook](http://jupyter.org/), but insid
 ## Install
 
 1. Install dependencies:
+
+ ##### OS X
+
   * Python 3: `brew install python3` (there are [issues](http://apple.stackexchange.com/questions/209572/how-to-use-pip-after-the-el-capitan-max-os-x-upgrade) with pip2 and OS X 10.11)
   * Jupyter and Jupyter Kernel Gateway: `pip3 install jupyter jupyter_kernel_gateway`
+
+ ##### Linux (Debian)
+
+  * Python: `sudo apt-get install python python-pip`
+  * Jupyter and Jupyter Kernel Gateway: `pip install jupyter jupyter_kernel_gateway`
+
 2. `apm install jupyter-notebook` or search for *jupyter-notebook* inside of Atom
 
 ## Usage
