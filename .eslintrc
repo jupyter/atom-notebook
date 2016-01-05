@@ -10,7 +10,7 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "camelcase": [2, {"properties": "never"}],
+    "camelcase": [0, {"properties": "never"}],
     "curly": [0, "multi"],
     "eol-last": 0,
     "max-len": [0, 120, 4],
