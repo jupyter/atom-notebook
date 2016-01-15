@@ -20,7 +20,7 @@
     "flux": "^2",
     "fs-plus": "^2.8",
     "immutable": "^3",
-    "jupyter-js-services": ">=0.2.1",
+    "jupyter-js-services": ">=0.4.0",
     "pathwatcher": ">=4.4.3",
     "portfinder": "^0.4.0",
     "react": "^0.14",
