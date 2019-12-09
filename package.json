@@ -28,7 +28,7 @@
     "transformime": "^1",
     "transformime-jupyter-transformers": "0.0.4",
     "uuid": "^2",
-    "ws": "^0.8",
+    "ws": "^7.2",
     "xmlhttprequest": "^1.8"
   },
   "devDependencies": {
